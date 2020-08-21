@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //函数可以相互调用
+        // function fn1() {
+        //     console.log('red');
+
+        // }
+        // fn1();
+        // function fn2() {
+        //     console.log(2453);
+
+        // }
+        // fn2()
+
+
+        function fn1() {
+            console.log('red'); //(2)
+            fn2();//(3)
+            console.log('fn2');//(6)
+
+        }
+
+        function fn2() {
+            console.log(2453);//(4)
+            console.log('fn1');//(5)
+
+
+        }
+        fn1();//(1)找到fn1  然后回到函数1执行
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

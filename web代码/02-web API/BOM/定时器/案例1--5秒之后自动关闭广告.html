@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="../ad.jpg" class="ad" alt="">
+    <button>×</button>
+    <script>
+        //点击关闭之后5s自动关闭
+        var ad = document.querySelector('.ad');
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            setTimeout(function () {
+                ad.style.display = 'none';
+                btn.style.display = 'none';
+            }, 5000)
+        });
+
+    </script>
+</body>
+
+</html>

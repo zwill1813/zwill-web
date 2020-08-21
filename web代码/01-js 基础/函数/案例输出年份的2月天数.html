@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //利用函数调用  用户数输入，输出当前年份2月份的天数
+        function backDay() {
+            var year = prompt('请你输入年份');
+            if (isRunYear(year)) {
+                alert(year + '年是闰年 ，2月的天数为29day：');
+            } else {
+                alert(year + '年是平年，2月的天数为28day：');
+            }
+        }
+        backDay();
+
+
+        function isRunYear(year) {
+            var flag = false;
+            //如果是闰年 返回true  否则返回false
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                flag = true;
+            }
+            return flag;
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

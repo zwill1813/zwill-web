@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 内置一个加法的方法
+        Array.prototype.sum = function () {
+            var sum = 0;
+            for (var i = 0; i < this.length; i++) {
+                sum += this[i];
+            }
+            return sum;
+        }
+        //数组和字符串的内置对象不能给原型对象操作下列操作
+        // Array.prototype = {
+        //     sum: function () {
+        //         var sum = 0;
+        //         for (var i = 0; i < this.length; i++) {
+        //             sum += this[i];
+        //         }
+        //         return sum;
+        //     }
+        // }
+        var arr = [2, 3, 4, 5];
+        console.log(arr.sum());
+        console.log(Array.prototype);
+        var arr1 = new Array(11, 33, 44, 77, 4);
+        console.log(arr1.sum());
+    </script>
+</body>
+
+</html>

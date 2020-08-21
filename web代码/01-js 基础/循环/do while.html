@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //  do while循环
+        // 语法结构
+        // do {
+        //     循环体
+        // } while (条件表达式);
+        //执行思路  先执行一次循环体，在判断条件 if 条件表达式为true，则执行循环体 否则退出
+        // 至少执行一次循环体
+
+        // 案例
+        // var i = 1;
+        // do {
+        //     document.write('这个人今年' + i + '岁了' + '<br>')
+        //     i++;
+        // } while (i < 10);
+
+        //    1-50的整数和
+        var sum = 0;
+        var j = 1;
+        do {
+            sum = sum + j;
+            j++;
+        } while (j <= 50);
+        document.write(sum);
+
+    </script>
+</head>
+
+<body>
+    <!-- 循环总结：
+    三者在多数情况下 可以相互代替
+    如果是用计数与数字有关的最好用for循环
+    while 和do...while循环可以做更复杂的判断条件 比for跟和灵活
+    while 和do...while 执行顺序不一样 ，while先判断后执行 do while 先执行 再判断执行
+    while 和do...while执行次数不一样，while可能一次也不执行 do while至少执行一次
+    在实际开发中更多用到for循环 比较简洁直观 -->
+
+</body>
+
+</html>

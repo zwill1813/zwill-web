@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //filter 筛选数组
+        //filter  返回的是一个新的数组
+        var arr = [23, 4, 5, 30, 7, 88, 22, 12,];
+        var newArr = arr.filter(function (value, index, array) {
+            // return value >= 20;//求大于20 的数
+            return value % 2 === 0;//求偶数
+        })
+        console.log(newArr);
+        //注意点1，value ---数组当前的值
+        //2，index---数组当前的索引号
+        //3.array---数组对象本身
+    </script>
+</body>
+
+</html>

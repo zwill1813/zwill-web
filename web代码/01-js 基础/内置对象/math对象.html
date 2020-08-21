@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //math对象
+        //他不是一个构造函数所以不需要new调用  而是直接使用里面的属性和值
+        // console.log(Math.PI);//圆周率
+        // console.log(Math.abs(-23));//23
+        // console.log(Math.max(2, 34, 90));//90
+        // console.log(Math.max(2, 34, 'js'));//NaN
+        // console.log(Math.max());//无穷大
+
+
+        // 案例
+        // 利用对象封装自己的数学对象 里面的PI 最大值和最小值
+        var myMath = {
+            PI: 3.1415926,
+            max: function () {
+                var max = arguments[0];//argument 对象包含了函数调用的参数数组。通过这种方式你可以很方便的找到最大的一个参数的值
+                for (var i = 0; i < arguments.length; i++) {
+                    if (arguments[i] > max) {
+                        max = arguments[i];
+                    }
+                }
+                return max;
+            },
+            min: function () {
+                var min = arguments[0];
+                for (var i = 0; i < arguments.length; i++) {
+                    if (arguments[i] < min) {
+                        min = arguments[i];
+                    }
+                }
+                return min;
+            }
+        }
+        console.log(myMath.PI);
+        console.log(myMath.max(2, 5, 8));//8
+        console.log(myMath.min(2, 5, 8));//2
+
+        //Mat的绝对值和三个取整的方法
+        console.log(Math.abs(-0.3));//0.3
+        //  Math.floor()  向下取  往小了取值
+        console.log(Math.floor(2.3));//2
+        //Math.ceil()向上取   往大了取值
+
+        console.log(Math.ceil(-1.2));//-1
+        //math.round()  s四舍五入
+        console.log(Math.round(-1.5));//-1
+        console.log(Math.round(1.5));//2
+
+
+
+
+        //Math.random()     随机返回一个数
+        //函数返回一个浮点,  伪随机数在范围从0到小于1，也就是说，从0（包括0）往上，但是不包括1（排除1），然后您可以缩放到所需的范围
+        console.log(Math.random());
+        // 得到一个两数之间的随机整数，包括两个数在内
+        //    Math.floor(Math.random() * (max - min + 1)) + min;
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        console.log(getRandom(2, 8));//调用
+
+        //随机点名
+        var arr = ['张三', '里斯', 'wangwu', '赵六'];
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        console.log(arr[getRandom(0, arr.length - 1)]);
+
+
+
+    </script>
+</head>
+
+<body>
+    <!-- math对象属性 -->
+    <!-- E        返回算术常量 e，即自然对数的底数（约等于2.718）。
+    LN2      返回 2 的自然对数（约等于0.693）。
+    LN10     返回 10 的自然对数（约等于2.302）。
+    LOG2E    返回以 2 为底的 e 的对数（约等于 1.4426950408889634）。
+    LOG10E   返回以 10 为底的 e 的对数（约等于0.434）。
+    PI       返回圆周率（约等于3.14159）。
+    SQRT1_2  返回 2 的平方根的倒数（约等于 0.707）。
+    SQRT2    返回 2 的平方根（约等于 1.414） -->
+    <!-- math对象方法 -->
+    <!-- abs(x) 返回 x 的绝对值。
+    acos(x) 返回 x 的反余弦值。
+    asin(x) 返回 x 的反正弦值。
+    atan(x) 以介于 -PI/2 与 PI/2 弧度之间的数值来返回 x 的反正切值。
+    atan2(y,x) 返回从 x 轴到点 (x,y) 的角度（介于 -PI/2 与 PI/2 弧度之间）。
+    ceil(x) 对数进行上舍入。
+    cos(x) 返回数的余弦。
+    exp(x) 返回 Ex 的指数。
+    floor(x) 对 x 进行下舍入。
+    log(x) 返回数的自然对数（底为e）。
+    max(x,y,z,...,n) 返回 x,y,z,...,n 中的最高值。
+    min(x,y,z,...,n) 返回 x,y,z,...,n中的最低值。
+    pow(x,y) 返回 x 的 y 次幂。
+    random() 返回 0 ~ 1 之间的随机数。
+    round(x) 四舍五入。
+    sin(x) 返回数的正弦。
+    sqrt(x) 返回数的平方根。
+    tan(x) 返回角的正切。 -->
+</body>
+
+</html>

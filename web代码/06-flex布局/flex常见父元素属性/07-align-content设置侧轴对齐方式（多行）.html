@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            /* lex-start：与交叉轴的起点对齐。
+               center：与交叉轴的中点对齐。
+               flex-end：与交叉轴的终点对齐。
+               space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。
+               space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
+               stretch（默认值）：轴线占满整个交叉轴。 */
+
+
+
+            /* 在单行下没有效果    只能再多行下使用 */
+            display: flex;
+            width: 800px;
+            height: 400px;
+            background-color: pink;
+            /* 换行 */
+            flex-wrap: wrap;
+            /* 因为有了换行，此时我们侧轴上控制子元素的对齐方式我们用 align-content */
+            /* align-content: flex-start; */
+            /* align-content: center; */
+            /* align-content: space-between; */
+            align-content: space-around;
+        }
+
+        div span {
+            width: 150px;
+            height: 100px;
+            background-color: purple;
+            color: #fff;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+    </div>
+</body>
+
+</html>

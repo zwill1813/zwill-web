@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <button id="btn">唐伯虎</button>
+    <div>123</div>
+    <script>
+        // 点击一个按钮，弹出对话框
+        // 1. 事件是有三部分组成  事件源  事件类型  事件处理程序   我们也称为事件三要素
+        //(1) 事件源 事件被触发的对象   谁  按钮
+        var btn = document.getElementById('btn');
+        //(2) 事件类型  如何触发 什么事件 比如鼠标点击(onclick) 还是鼠标经过 还是键盘按下
+        //(3) 事件处理程序  通过一个函数赋值的方式 完成
+        btn.onclick = function () {
+            alert('点秋香');
+        }
+
+        // 执行事件步骤
+        // 点击div 控制台输出 我被选中了
+        // 1. 获取事件源
+        var div = document.querySelector('div');
+        // 2.绑定事件 注册事件
+        // div.onclick 
+        // 3.添加事件处理程序 
+        div.onclick = function () {
+            console.log('我被选中了');
+
+        }
+    </script>
+
+</body>
+<!-- onclick	script	当单击鼠标时运行脚本
+ondblclick	script	当双击鼠标时运行脚本
+ondragNew	script	当拖动元素时运行脚本
+ondragendNew	script	当拖动操作结束时运行脚本
+ondragenterNew	script	当元素被拖动至有效的拖放目标时运行脚本
+ondragleaveNew	script	当元素离开有效拖放目标时运行脚本
+ondragoverNew	script	当元素被拖动至有效拖放目标上方时运行脚本
+ondragstartNew	script	当拖动操作开始时运行脚本
+ondropNew	script	当被拖动元素正在被拖放时运行脚本
+onmousedown	script	当按下鼠标按钮时运行脚本
+onmousemove	script	当鼠标指针移动时运行脚本
+onmouseout	script	当鼠标指针移出元素时运行脚本
+onmouseover	script	当鼠标指针移至元素之上时运行脚本
+onmouseup	script	当松开鼠标按钮时运行脚本
+onmousewheelNew	script	当转动鼠标滚轮时运行脚本
+onscrollNew	script	当滚动元素的滚动条时运行脚本 -->
+
+</html>

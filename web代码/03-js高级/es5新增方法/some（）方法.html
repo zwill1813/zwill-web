@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //some()方法检测数组中是否满足条件的元素  l类似 every()
+        //返回的是布尔类型  如果有返回true   如果没有返回false
+        // var arr = [23, 72, 14, 26, 9];
+        // var arr1 = arr.some(function (value, index, array) {
+        //     return value >= 80;
+        // });
+        // console.log(arr1);
+
+        var arr2 = ['red', 'pink', 'blue'];
+        var flag1 = arr2.some(function (value) {
+            return value == 'pink';
+        });
+        console.log(flag1);
+        // 1. filter 也是查找满足条件的元素 返回的是一个数组 而且是把所有满足条件的元素返回回来
+        // 2. some 也是查找满足条件的元素是否存在  返回的是一个布尔值 
+        //如果查找到第一个满足条件的元素就终止循环
+    </script>
+</body>
+
+</html>

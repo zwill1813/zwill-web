@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 字符串重复
+        // repeat()：返回新的字符串，表示将字符串重复指定次数返回。
+
+        console.log("Hello,".repeat(2));  // "Hello,Hello,"
+
+        // 如果参数是小数，向下取整
+        console.log("Hello,".repeat(3.2));  // "Hello,Hello,Hello,"
+
+        // 如果参数是 0 至 -1 之间的小数，会进行取整运算，0 至 -1 之间的小数取整得到 -0 ，等同于 repeat 零次
+        console.log("Hello,".repeat(-0.5));  // "" 
+
+        // 如果参数是 NaN，等同于 repeat 零次
+        console.log("Hello,".repeat(NaN));  // "" 
+
+        // 如果参数是负数或者 Infinity ，会报错:
+        console.log("Hello,".repeat(-1));
+
+        // RangeError: Invalid count value
+
+        console.log("Hello,".repeat(Infinity));
+        // RangeError: Invalid count value
+
+        // 如果传入的参数是字符串，则会先将字符串转化为数字
+        console.log("Hello,".repeat("hh")); // ""
+        console.log("Hello,".repeat("2"));  // "Hello,Hello,"
+    </script>
+</body>
+
+</html>

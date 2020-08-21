@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 5000px;
+        }
+
+        .sl {
+            width: 40px;
+            height: 40px;
+            background-color: cadetblue;
+            position: fixed;
+            right: 0;
+            top: 100px;
+            color: #ffffff;
+            cursor: pointer;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .con {
+            width: 200px;
+            height: 40px;
+            background-color: cadetblue;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+    <script src="animate.js"></script>
+</head>
+
+<body>
+    <div class="sl">
+        <span>←</span>
+        <div class="con">问题反馈</div>
+    </div>
+    <script>
+        var sl = document.querySelector('.sl');
+        var con = document.querySelector('.con');
+        var span = document.querySelector('span');
+        // 当我们鼠标经过 sliderbar 就会让 con这个盒子滑动到左侧
+        // 当我们鼠标离开 sliderbar 就会让 con这个盒子滑动到右侧
+        sl.addEventListener('mouseenter', function () {
+            // animate(obj, target, callback);
+            animate(con, -160, function () {
+                // 当我们动画执行完毕，就把 ← 改为 →
+                span.innerHTML = '➡';
+            });
+        })
+        sl.addEventListener('mouseleave', function () {
+            animate(con, 0, function () {
+                span.innerHTML = '←';
+            });
+        })
+    </script>
+</body>
+
+</html>

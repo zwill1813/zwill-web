@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //continue 关键字  退出本次循环（当前次的循环） 继续执行剩余次数循环
+        // for (var i = 1; i <= 10; i++) {
+        //     if (i == 5) {
+        //         continue;//只要遇见continue就退出本次循环  直接跳到i++
+
+        //     }
+        //     document.write('这是第' + i + '次 <br>');
+        // }
+
+
+        // 案例：
+        // 1-100之间能被5整除之外的整数和
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 5 == 0) {
+                continue;
+            }
+            sum = sum + i;
+
+        }
+        document.write(sum);
+
+
+
+        //break  关键字  退出整个循环
+        for (var i = 1; i <= 5; i++) {
+            if (i == 4) {
+                break;
+            }
+            console.log('这是第' + i + '个');
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

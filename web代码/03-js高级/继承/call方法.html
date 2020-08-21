@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //继承
+        //在二三之前没有提供extends继承，我们可以通过构造函数+原型对象  模拟实现继承---组合继承
+        //call方法
+        function fn(a, b) {
+            console.log('html');
+            console.log(this);
+            console.log(a + b);
+        }
+        var o = {
+            uname: '刘德华'
+        };
+        //fn();//普通的调用方法
+        //1.call()可以调用函数
+        // fn.call()
+        //2.call()可以改变函数的this指向问题   此时这个this指向0 这个对象
+        fn.call(o, 2, 3);
+    </script>
+</body>
+
+</html>

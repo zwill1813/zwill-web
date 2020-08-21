@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .tab {
+            margin: 100px auto;
+            width: 502px;
+            height: 300px;
+            border: 1px solid #cccccc;
+        }
+
+        .tab-list {
+            width: 100%;
+            height: 50px;
+
+            border-bottom: 1px solid #cccccc;
+            background-color: blanchedalmond;
+        }
+
+        .tab-list ul li {
+            float: left;
+            width: 100px;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+
+        }
+
+        .current {
+            background-color: brown;
+        }
+
+        .itme {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="tab">
+        <div class="tab-list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格包装</li>
+                <li>售后服务</li>
+                <li>商品评价</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div class="itme" style="display: block;"><a href="#">商品介绍模块</a></div>
+            <div class="itme"><a href="#">规格包装模块</a></div>
+            <div class="itme"><a href="#">售后服务模块</a></div>
+            <div class="itme"><a href="#">商品评价模块</a></div>
+            <div class="itme"><a href="#">手机社区模块</a></div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            // // 1.点击上部的li，当前li 添加current类，其余兄弟移除类
+            $('.tab-list li').click(function () {
+                $(this).addClass('current').siblings().removeClass(); // 链式编程操作
+                // 2.点击的同时，得到当前li 的索引号
+                var index = $(this).index();
+                // 3.让下部里面相应索引号的itme显示，其余的itme隐藏
+                $('.tab-content .itme').eq(index).show().siblings().hide();
+            })
+        })
+    </script>
+</body>
+
+</html>

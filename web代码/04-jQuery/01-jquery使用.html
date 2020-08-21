@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 当初始的 HTML 文档被完全加载和解析完成之后 事件被触发，而无需等待样式表、图像和子框架的完全加载  //js原生
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     var div = document.querySelector('div');
+        //     div.onclick = function () {
+        //         div.style.backgroundColor = 'pink';
+
+
+        //     }
+        // });
+
+        // load 应该仅用于检测一个完全加载的页面   //js原生
+        // window.onload = function () {
+        //     var div = document.querySelector('div');
+        //     div.onclick = function () {
+        //         div.style.backgroundColor = 'pink';
+        //     }
+        // }
+
+
+
+        // 1. 等着页面DOM加载完毕再去执行js 代码
+        // $(document).ready(function() {
+        //     $('div').hide();
+        // })
+        // 2.  等着页面DOM加载完毕再去执行js 代码  //常用
+        $(function () {
+            $('div').hide();
+
+        })
+    </script>
+    <div></div>
+
+</body>
+
+</html>

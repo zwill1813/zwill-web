@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.需要声明一个临时变量帮忙
+        // 2.把box1给我们临时变量temp
+        // 3.把box2里的内容给box1
+        // 4.把临时变量里面的值给box2
+        var temp;//声明一个变量为空
+        var box1='青苹果';
+        var box2='红苹果';
+        temp =box1;//把右边给左边
+        box1=box2;
+        box2=temp;
+        console.log(box1);
+        console.log(box2);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

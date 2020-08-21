@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //案例一删除数组指定元素
+        //将数组[2, 0, , 6, 1, 0, 77, 34, 0];中的0 去掉形成一个不含0的数组
+
+        var arr = [2, 0, 6, 1, 0, 77, 34, 0];
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                newArr[newArr.length] = arr[i];
+            }
+        }
+        console.log(newArr);
+
+
+
+
+        //案例二  翻转数组元素
+        //方法一:  //将数组['red','green','blue','pink',blank]的内容反过来存放
+        //生明一个新的数组newArr
+        //把数组索引号最后一个元素取过来（arr.length -1） 给到新数组第0个元素(newArr.length)
+        //  采取的方式是递减  i--；
+        var arr = ['red', 'green', 'blue', 'pink', 'blank'];
+        var newArr = [];
+        for (var i = arr.length - 1; i >= 0; i--) {
+            newArr[newArr.length] = arr[i];
+        }
+        // console.log(newArr);
+        document.write(newArr);
+
+        //方法二: 
+        //   /reverse  实现数组的翻转
+        //reverse 方法将数组中元素的位置颠倒，并返回该数组。
+        // 数组的第一个元素会变成最后一个，数组的最后一个元素变成第一个。该方法会改变原数组
+        var arr1 = ['green', 'blue', 'pink'];
+        arr1.reverse();
+        console.log(arr1);
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+
+    //翻转数组
+    function reverse(arr) {
+        // if (arr instanceof Array) {//(1)
+        if (Array.isArray(arr)) {
+            // var arr = ['red', 'green', 'blue', 'pink', 'blank'];
+            var newArr = [];
+            for (var i = arr.length - 1; i >= 0; i--) {
+                newArr[newArr.length] = arr[i];
+            }
+            return newArr;
+        } else {
+            return 'error  输入正确的数组格式[1,2,3]';
+        }
+    }
+    console.log(reverse(['red', 'green', 'blue', 'pink', 'blank']));
+    console.log(reverse(1, 2, 3));
+
+    // 检测是否为数组的方法
+    // (1),Array.isArray(参数)
+    var arr = [];
+    var obj = {};
+    console.log(Array.isArray(arr));//ture
+    console.log(Array.isArray(obj));//false
+    //   （2）,instanceof  运算符
+    console.log(arr instanceof Array);//ture
+    console.log(obj instanceof Array);//false
+
+
+
+
+    //添加数组元素的方法：
+    //  1，push()在数组的末尾 添加一个后多个数组元素
+    var arr1 = [1, 2, 3, 4];
+    // arr.push('red');
+    console.log(arr1.push('red'));
+
+    console.log(arr1);
+    //注意点;
+    //1,push 是可以给数组追加新的元素
+    //  2，push（）参数直接写   数组元素就可以了
+    //3，push 完毕之后，返回的结果是新数组的长度
+    // 4，原数组也会发生变化
+
+    //unshift 在数组的前面  添加一个后多个数组元素
+    console.log(arr1.unshift('green'));
+    console.log(arr1);
+    //注意点;
+    //1,unshift 是可以给数组前面追加新的元素
+    //  2，unshift（）参数直接写   数组元素就可以了
+    //3,unshift 完毕之后，返回的结果是 新数组的长度
+    // 4，原数组也会发生变化
+
+
+
+    //删除数组元素的方法：
+    //1，pop() 删除最后一个元素把数组减1
+    // arr1.pop();
+    console.log(arr1.pop());
+    console.log(arr1);
+    // /注意点;
+    //1,pop 是可以给数组删除最后一个的元素  一次只能删除一个
+    //  2，pop（）没有参数
+    //3,pop 完毕之后，返回的结果是 删除那个的元素
+    // 4，原数组也会发生变化
+
+    //2，shift   删除数组的第一个元素
+    console.log(arr1.shift());
+    console.log(arr1);
+    // /注意点;
+    //1,shift 是可以给数组删除第一个的元素  一次只能删除一个
+    //  2，shift（）没有参数
+    //3,shift 完毕之后，返回的结果是 删除的那个元素
+    // 4，原数组也会发生变化
+
+
+
+
+    //  案例
+    // 有一个数组[1500,1800,1900,2100,2300,] 要求把小于2000的重新放进新的数组里
+    var arr2 = [1500, 1800, 1900, 2100, 2300,];
+    var newArr = [];
+    for (var i = 0; i < arr2.length; i++) {
+        if (arr2[i] < 2000) {
+            // newArr[newArr.length] = arr2[i];
+            newArr.push(arr[i]);//就是小于2000的数组到新的数组
+
+        }
+    }
+    console.log(newArr);
+
+
+    //获取数组元素索引方法：
+    // 1，indexOf（数组元素）  从左至右查找  ---返回该数组的索引号
+    //他只返回第一个满足条件的索引号
+    //如果在数组里找不到元素则返回的是-1；
+    var arr3 = ['RED', 'GREEN', 'PINK', 'BLUE'];
+    console.log(arr3.indexOf('RED'));//0
+    console.log(arr3.indexOf('ure'));//-1
+    // 2,lastIndexOf（数组元素） 从右至左查找
+    console.log(arr3.lastIndexOf('PINK'));//2
+
+
+    //数组转换成字符串
+    //1，toString()将我们数组转化为字符串
+    var arr = [3, 4, 6];
+    console.log(arr.toString());//3,4,6
+
+    //2， join（分隔符）
+    var arr1 = ['red', 'blue', 'pink'];
+    console.log(arr1.join());// red, blue, pink
+    console.log(arr1.join('-')); //red - blue - pink
+    console.log(arr1.join('&'));//开发中常用  red&blue&pink
+
+
+
+    //splice()方法通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容。此方法会改变原数组。
+
+    //语法：array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
+    //start 指定修改的开始位置（从0计数）。如果超出了数组的长度，则从数组末尾开始添加内容；如果是负值，则表示从数组末位开始的第几位（从-1计数，这意味着-n是倒数第n个元素并且等价于array.length-n）；如果负数的绝对值大于数组的长度，则表示开始位置为第0位。
+
+    //如果 deleteCount 大于 start 之后的元素的总数，则从 start 后面的元素都将被删除（含第 start 位）
+    //   如果 deleteCount 是 0 或者负数，则不移除元素。这种情况下，至少应添加一个新元素。
+    //如果 deleteCount 被省略了，那么start之后数组的所有元素都会被删除。
+
+    // //返回值：由被删除的元素组成的一个数组。如果只删除了一个元素，则返回只包含一个元素的数组。如果没有删除元素，则返回空数组。
+    var myArr = ['html', 'css', 'js'];
+    // myArr.splice(2, 0, 'bom', 'dom');//从第二位增加
+    // console.log(myArr.splice(2, 0, 'bom', 'dom'));//返回值  []
+    // myArr.splice(2, 1);//从第 2 位开始删除 1 个元素
+    myArr.splice(2, 1, 'vue')//从第 2 位开始删除 1 个元素 插入‘vue'
+    console.log(myArr);
+
+
+    //slice() 方法返回一个新的数组对象，这一对象是一个由 begin 和 end 决定的原数组的浅拷贝（包括 begin，不包括end）。原始数组不会被改变。
+
+    //语法：arr.slice([begin[, end]])
+
+    var oldArr = ['we', 'er', 'rt', 'yu', 'io'];
+    console.log(oldArr.slice(2));//["rt", "yu", "io"]
+    console.log(oldArr.slice(2, 4));//["rt", "yu"]
+    console.log(oldArr.slice(1, 5));// ["er", "rt", "yu", "io"]
+
+    // concat() 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。
+
+
+    const array1 = ['a', 'b', 'c'];
+    const array2 = ['d', 'e', 'f'];
+    const array3 = array1.concat(array2);
+
+    console.log(array3);
+</script>
+
+<body>
+
+</body>
+
+</html>

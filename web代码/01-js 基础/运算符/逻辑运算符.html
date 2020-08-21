@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 逻辑运算符 于 &&  左右两边同为ture  则为ture， 有一个为false，则为false 
+        console.log(3 > 4 && 4 < 5);//false + ture=false
+        console.log(3 < 4 && 4 < 5);//ture  +  ture =ture
+        //逻辑运算符 或  ||  左右两边同为false  则为false， 有一个为ture，一个为false  则为ture
+        console.log(3 < 4 || 4 < 3);//ture +false= ture
+        console.log(3 < 2 || 4 > 5);//false+false=false
+        console.log(3 < 4 || 4 > 3);//ture +ture= ture
+        // 运算符（！） 非  对于 false 语句返回 true，对于 true 语句返回 false
+        console.log(!(3 === '4'));//ture
+        var x = 6;
+        var y = 3;
+        console.log(!(x === y));//ture
+        console.log(!(x > y));//false
+        //逻辑中断逻辑与(短路运算符)
+        //123 &&  456 是值或是表达式参与逻辑运算
+        // 如果表达式1结果为真  则返回表达式2
+        console.log(123 && 456);//456
+
+        // 如果表达式1结果为假  则返回表达式1
+        console.log(0 && 456);//456   0在数字中为假
+        console.log(0 && 1 + 2 && 78 * 566);//0
+        //    如果有空的或者否定为假其余是真的  0  ，null undefined  NaN
+
+        ////逻辑中断逻辑或(短路运算符)
+        // 如果表达式1结果为真  则返回表达式1
+        console.log(123 || 456);//123
+
+
+        // 如果表达式1结果为假  则返回表达式2
+        console.log(0 || 456);//456
+        console.log(0 || 123 || 234 + 345);//123
+        // 逻辑很重要，他会影响我们的运行结果
+        var num = 0;
+        console.log(123 || num++);//123
+        console.log(num);//0  这里的num++被中断  没有被执行
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

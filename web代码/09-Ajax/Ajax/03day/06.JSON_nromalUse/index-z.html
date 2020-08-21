@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var JSONObj = '{"name":"刘德华","age":18,"sxe":"男"}';
+        console.log(JSONObj);
+
+        //转化为对想
+        var obj = JSON.parse(JSONObj);
+        console.log(obj);
+        console.log(obj.name + '------' + obj.age);
+
+
+        var JSONArr = '["医生","武警","警察"]';
+        console.log(JSONArr);
+        var arr = JSON.parse(JSONArr);
+        console.log(arr);
+        console.log(arr[0]);
+
+
+        var JSONObjArr = '{"name":"周杰伦","age":35,"skill":"sing","friends":["吴宗宪","刘耕宏","蔡依琳"]}';
+
+        console.log(JSONObjArr);
+        var result = JSON.parse(JSONObjArr);
+        console.log(result.friends[2]);
+    </script>
+
+
+</body>
+
+</html>

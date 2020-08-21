@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //if else  if多分支语句 就是利用多个条件来选择不同的语句执行，得到不同的结果   多选1
+        // if (条件表达式1) {
+        //     //语句1
+        // } else if (条件表达式2) {
+        //     //语句2
+        // } else if (条件表达式3) {
+        //     //语句3
+        // } else {
+        //     //最后的语句
+        // }
+        //执行思路：
+        //如果条件表达式1，满足就执行语句1 执行完毕  退出整个if语句
+        //如果条件表达式1  不满足 则判断条件表达式 满足的话  执行语句2  以此类推
+
+        //如果上面的所有条件表达式都不成立  则执行else里面的语句
+        //注意：多分支语句最终还是多选一  只能执行一个语句
+        //     else  if   理论上是可以有任意多个的
+        //    else if中必须要有空格
+
+        var score = prompt('请输入您分数');
+        if (score >= 90) {
+            alert(+score + '成绩优秀');
+        } else if (score >= 80) {
+            alert(+score + '成绩良好');
+        } else if (score >= 70) {
+            alert(+score + '成绩中等');
+        } else if (score >= 60) {
+            alert(+score + '成绩合格');
+        } else {
+            alert(+score + '成绩不及格');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

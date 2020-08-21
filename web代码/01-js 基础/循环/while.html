@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //while  循环：
+        //语法结构：
+        // while(条件表达式){
+        //     循环体
+        // }
+        // 执行思路：
+        // 当条件表达式为true  则执行循环体里的   当条件表达式为false时 则退出循环
+
+
+        //  /代码验证：
+        // var num = 1;
+        // while (num < 10) {
+        //     document.write('jacascript' + '<br>');
+        //     num++;
+        // }
+
+
+        //案例
+        // // 1.打印一个人的1-40岁
+        // var age = 1;
+        // while (age <= 40) {
+        //     console.log('这个人今年' + age + '岁了');
+        //     age++;
+        // }
+        //2 弹出一个提示框： 你喜欢我吗？ 如果输入喜欢 就提示结束  否则一直提示
+        var str = prompt('你喜欢我吗？');
+        while (str !== '喜欢') {
+            str = prompt('你喜欢我吗？');
+
+        }
+        alert('我也喜欢你  哈哈！')
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //   switch  语句也是多分支语句  也可以实现多选1
+        switch (表达式) {
+            case value1:
+                执行语句;
+                break;
+            case value2:
+                执行语句;
+                break;
+            case value3:
+                执行语句;
+                break;
+            // ...
+            default:
+                执行最后的语句
+        }
+        //执行思路  利用我们的表达式的值和  case 后面的选项相匹配
+                // 如果匹配上就执行该case里的语句 如果没有匹配的上那么就执行default里的语句
+
+
+                //注意细节
+                //在开发里面  表达式经常写成变量
+                //表达式里的值 和case里的值 必须是同值同类型的
+                //break如果当前的case里面的没有break  则不会退出switch 是继续执行下一个case
+    </script>
+</head>
+
+<body>
+    <p>
+        switch 和if else if的区别： --></p>
+    <p> 1.一般情况下他们两个语句可以相互转换</p>
+    <p> 2.switch，，case语句通常处理case为比较"确定"的值，而if。。else语句更加灵活常用于范围判断（<=); </p>
+            <p> 3.switch 效率更高 if else效率相对较低</p>
+            <p> 4.当分支比较比较少时 ifelse语句执行效率比switch语句</p>
+            <p> 5.当分支比较多时 switch语句执行效率比较高 而且结构更清晰 </p>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* background-color: skyblue; */
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+        }
+
+        ul {
+            padding: 20px 20px;
+        }
+
+        ul li {
+
+            width: 24px;
+            height: 24px;
+            float: left;
+            list-style: none;
+            background-color: red;
+            margin-left: 25px;
+            margin-top: 15px;
+            background: url(../image/sprite.png) no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        // 1. 获取元素 所有的小li 
+        var lis = document.querySelectorAll('li');
+        for (var i = 0; i < lis.length; i++) {
+            // 让索引号 乘以 44 就是每个li 的背景y坐标  index就是我们的y坐标
+            var index = i * 44;
+            lis[i].style.backgroundPosition = '0 -' + index + 'px'
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: none;
+            width: 280px;
+            height: 100px;
+            margin: 100px auto;
+            color: #333333;
+            line-height: 100px;
+            text-align: center;
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击</button>
+    <div></div>
+    <script>
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        btn.addEventListener('click', function () {
+            // location.href = 'http://www.itcast.cn';
+
+
+
+            var time1 = 5;
+            setInterval(function () {
+                if (time1 == 0) {
+                    location.href = 'http://www.itcast.cn';
+
+                } else {
+                    div.innerHTML = '您将在' + time1 + '秒之后跳转到新的页面';
+                    div.style.display = 'block';
+                    time1--;
+                }
+            }, 1000);
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        header {
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            background-color: blueviolet;
+        }
+
+        .change {
+            width: 300px;
+            height: 400px;
+            color: cornsilk;
+            font-size: 20px;
+            background-color: cyan;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        123
+    </div>
+    <header class="star">文本</header>
+    <script>
+        //1,使用element.style 获得元素样式  如果样式比较少或者功能简单的情况使用
+        //获取元素
+        var div = document.querySelector('div');
+        //注册事件 
+        div.onclick = function () {
+            //div.style里面的属性采取驼峰命名法
+            this.style.backgroundColor = 'pink';
+            this.style.width = '300px';
+        }
+        //js修改style样式操作，产生的是行内样式  css权重比较高
+
+        //2,使用element.className 获得元素样式
+        var header = document.querySelector('header');
+        header.onclick = function () {
+            this.className = 'star change';
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

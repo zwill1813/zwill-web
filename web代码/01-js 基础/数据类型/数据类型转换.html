@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 数据类型转换：就是把一种数据类型转换成林一种数据类型；
+        //转换成字符串类型；
+        //   把数字转换字符串，toString
+            var num =12;
+            console.log(num);
+            // var flae=true;
+            // console.log(flae);
+            
+            var str =num.toString();
+            console.log(typeof str);
+            //利用String（变量）
+            var nu=122;
+            console.log(String(nu));
+            //3.利用+拼接字符串的方法实现转换效果
+            console.log(num+'javascript');
+            
+            //转换为数字型
+            // 1.parseInt(变量)函数  将String转换为数值型(整数)
+            var age =prompt('请输入您的你年龄');
+            console.log(parseInt(age));
+              console.log(parseInt('3.14'));//3
+              console.log(parseInt('3.96'));//3
+              console.log(parseInt('120px'));//120   会去掉px单位
+              
+            //2.parseFlat(变量)函数    将String转换为浮点型
+              console.log(parseFloat('3.14'));//3.14
+              console.log(parseFloat('120px'));//120   会去掉px单位
+              
+
+            // 3.Number()强制转换函数      将String转换为数值型
+            var stri =123;
+            console.log(Number(stri));
+            
+            // 4.js隐转换 利用了数字运算 -减， *乘， /除
+            console.log('23'-2);//21
+            
+            
+    </script>
+</head>
+<body>
+<p></p>
+</body>
+</html>

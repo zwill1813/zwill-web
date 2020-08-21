@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*   +	加法	x=y+2	7	5	 »
+         -	减法	x=y-2	3	5 »
+         *	乘法	x=y*2	10	5 »
+         /	除法	x=y/2	2.5	5	 
+         %	取模（余数）	x=y%2	1	5	 »
+         ++	自增	x=++y	6	6	 »
+                      x=y++	5	6	 »
+         --	自减	x=--y	4	4 »
+                      x=y--	5	4	 » */
+
+
+    //递增和递减运算符  注递增和递减运算符 必须和变量结合
+    //前置递增  ++写在变量的前面
+    var age = 10;
+    //先加1，在返回值
+    ++age;//类似于 age=age+1
+    console.log(age);//11
+    //
+    var p = 19;
+    console.log(++p + 12);//32
+
+    //后置递增 ++写在变量的后面
+    var a = 29;
+    //先返回原值  后加1，
+    a++;
+    console.log(a);//30
+    var b = 10;
+    console.log(b++ + 12);//22
+    console.log(b);//11
+    //案例
+    console.log('---------');
+
+    var a = 10;
+    ++a;
+    var b = ++a + 10;//  ++a=12
+    console.log(b);//22
+
+    var c = 10;
+    c++;
+    var d = c++ + 10;//c++=11
+    console.log(d);//21
+
+    var e = 10;
+    var f = e++ + ++e;//1,e++ =10  e=10  2.e=12  ++e=12
+    console.log(f);
+
+    //浮点型
+    console.log(0.2 + 0.3);
+
+                    //表达式：是有数字，运算符，变量等组成的式子
+                    //在程序里面一般写成“2=1+1”，把右边表达式计算完返回给左边
+
+  </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

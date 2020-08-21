@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.新增数组元素， 修改length和长度
+        var arr = ['red', 'blue', 'pink'];
+        console.log(arr.length);
+        arr.length = 6; //把数组长度修改为6 里面应该有6个元素
+        console.log(arr);
+        console.log(arr[3]);
+        console.log(arr[7]);
+
+
+        //修改索引号  
+        var arr1 = ['red', 'blue', 'pink'];
+        arr1[3] = 'green';//增加数组元素
+        arr1[4] = 'black';
+        document.write(arr1);
+        //修改数组元素
+        arr1[0] = 'yellow';  //yellow 会替换red元素
+        document.write(arr1);  //yellow,blue,pink,green,black
+
+   //*  注：不要直接给数组元素赋值，否则会覆盖以前的数据
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

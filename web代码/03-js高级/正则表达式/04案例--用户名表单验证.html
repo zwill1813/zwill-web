@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            margin: 100px auto;
+            width: 500px;
+            height: 400px;
+            border: 1px solid #cccccc;
+            padding-top: 100px;
+            padding-left: 20px;
+
+        }
+
+        .box span {
+            display: inline-block;
+            width: 200px;
+            height: 30px;
+            font-size: 8px;
+            /* border: 1px solid #333333; */
+            box-shadow: 3px;
+            margin-left: 10px;
+            opacity: .6;
+        }
+
+        input {
+            outline: none;
+
+        }
+
+        .worrg {
+            color: red;
+
+        }
+
+        .right {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="text" class="uname" placeholder="用户名"><span></span>
+    </div>
+    <script> //  量词是设定某个模式出现的次数
+        var reg = /^[a-zA-Z0-9-_]{3,18}$/;// 这个模式用户只能输入英文字母 数字 下划线 短横线但是有边界符和[] 这就限定了只能多选1
+        var inp = document.querySelector('.uname');
+        var span = document.querySelector('span')
+        inp.onblur = function () {
+            if (reg.test(this.value)) {
+                span.className = 'right';
+                span.innerHTML = '√  用户名输入正确';
+            } else {
+
+                span.className = 'worrg';
+                span.innerHTML = '×  用户名输入错误';
+            }
+        }
+    </script>
+</body>
+
+</html>

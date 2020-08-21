@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <!-- ie 按照 最新的 方式渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 视口 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <!--<link href="lib/css/bootstrap.min.css" rel="stylesheet">-->
+    <!-- bootstrap的 样式 -->
+    <link href="lib/css/bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- 兼容 ie9
+    html5shiv html5的新语义标签
+    respond 低版本的ie中 不支持 媒体查询 @media
+   -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+    <style>
+        h1 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+
+        .zombie-panel table th {
+            text-align: center;
+            background-color: #eee;
+        }
+
+        .zombie-panel table td {
+            text-align: center;
+        }
+
+        /* 清除 底部的样式 */
+
+        .zombie-panel .pagination {
+            margin: 0;
+        }
+
+        .zombie-panel {
+            position: relative;
+        }
+
+        #editModal .modal-dialog {
+            position: relative;
+        }
+
+        #coverModal {
+            background: url('img/loading.gif')no-repeat center;
+        }
+
+        a.disabled {
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 最外层的容器 -->
+    <div class="container">
+        <!-- 顶部标题 -->
+        <h1>人员管理_自己的<small>--版本9.0</small></h1>
+        <!-- 面板 -->
+        <div class="zombie-panel panel panel-default">
+            <!-- 顶部 -->
+            <div class="panel-heading">
+                <h3 class="panel-title">信息列表</h3>
+            </div>
+            <!-- 内容区域 -->
+            <div class="panel-body">
+                <!-- 表格 -->
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th width='10%'>序号</th>
+                            <th width='15%'>姓名</th>
+                            <th width='15%'>年龄</th>
+                            <th width='20%'>学校</th>
+                            <th width='20%'>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--<tr>
+              <td>1</td>
+              <td>水桶僵尸</td>
+              <td>18</td>
+              <td>zombie1</td>
+              <td>僵尸大学</td>
+              <td>
+                <button class='btn btn-default btn-xs glyphicon glyphicon-remove'></button>
+                <button class='btn btn-default btn-xs glyphicon glyphicon-edit'></button>
+              </td>
+            </tr>-->
+                    </tbody>
+                </table>
+            </div>
+            <!-- 底部区域 -->
+            <div class="panel-footer">
+                <nav class='clearfix' aria-label="Page navigation">
+                    <!-- 分页器 -->
+                    <ul class="pagination pull-right">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">/</a></li>
+                        <li><a href="#">1</a></li>
+                        <li>
+                            <a href="javascript:void(0)" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- 新增按钮 -->
+                    <button data-toggle="modal" data-target="#addModal" class='btn btn-danger'>新增</button>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- 新增模态框 #addModal -->
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">新增窗口</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="addname">姓名</label>
+                            <input type="text" name='name' class="form-control" id="addname" placeholder="请输入真实姓名">
+                        </div>
+                        <div class="form-group">
+                            <label for="addpassword">密码</label>
+                            <input type="password" name='password' class="form-control" id="addpassword"
+                                placeholder="请输入密码">
+                        </div>
+                        <div class="form-group">
+                            <label for="addschool">学校</label>
+                            <input type="text" class="form-control" name='school' id="addschool" placeholder="请输入学校">
+                        </div>
+                        <div class="form-group">
+                            <label for="addage">年龄</label>
+                            <input type="text" name='age' class="form-control" id="addage" placeholder="请输入年龄">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">保&nbsp;存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 修改模态框模态框 #addModal -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">修改窗口</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="editname">姓名</label>
+                            <input type="text" name='name' class="form-control" id="editname" placeholder="请输入真实姓名">
+                        </div>
+                        <div class="form-group">
+                            <label for="editpassword">密码</label>
+                            <input type="password" name='password' class="form-control" id="editpassword"
+                                placeholder="请输入密码">
+                        </div>
+                        <div class="form-group">
+                            <label for="editschool">学校</label>
+                            <input type="text" class="form-control" name='school' id="editschool" placeholder="请输入学校">
+                        </div>
+                        <div class="form-group">
+                            <label for="editage">年龄</label>
+                            <input type="text" name='age' class="form-control" id="editage" placeholder="请输入年龄">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 删除模态框 #removeModal -->
+    <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">删除窗口</h4>
+                </div>
+                <div class="modal-body">
+                    <h2>你真的想清楚了，删了可就没有了哦😁</h2>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">我想好了</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 遮挡用 模态框  -->
+    <div class="modal fade" id="coverModal" tabindex="-1" role="dialog" data-backdrop='static'
+        aria-labelledby="myModalLabel">
+    </div>
+</body>
+
+</html>
+
+<!-- 引入文件 -->
+<script src="./lib/js/jquery-1.12.4.js"></script>
+
+<script src="./lib/js/bootstrap.min.js"></script>
+<script src="./lib/js/template-web.js"></script>
+<script>
+    $(function () {
+        $('#coverModal').modal("show");
+        $.ajax({
+            url: 'http://127.0.0.1/Ajax/06day/00.API/api_cors/findUsers.php',
+            data: {
+                pageNum: 1,
+                pageSize: 5
+            },
+            success: function (data) {
+                console.log(data);
+                $('#coverModal').modal("hide");
+            }
+        })
+    })
+</script>

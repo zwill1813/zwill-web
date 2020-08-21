@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 求学生成绩案例
+        var num = prompt('请输入班级总数：');
+        sum = 0;
+        for (var i = 1; i <= num; i++) {
+            var score = prompt('请输入第' + i + '同学分数：');
+            sum = sum + parseFloat(score);
+
+        }
+        average = sum / num;
+        alert('班级学生成绩总和：' + sum);
+        alert('班级学生成绩平均成绩总和：' + average);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

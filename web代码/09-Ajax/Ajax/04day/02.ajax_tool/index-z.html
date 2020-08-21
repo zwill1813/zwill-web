@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //get
+    function get(url, data, success) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', url);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && chr.status == 200) {
+                success(xhr.responseText);
+            }
+        }
+        xhr.send(null);
+    }
+    //post
+    function post(url, data, success) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('post', url);
+        if (data) {
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+        }
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                success(xhr.responseText)
+            }
+        }
+        xhr.send(data)
+    }
+
+    function ajax_test(url, type, data, success) {
+        var xhr = new XMLHttpRequest();
+        if (type == 'get' && data) {
+            url += '?' + data;
+            data = null;
+
+        }
+
+        xhr.open(type, url);
+        if (type == 'post' && data) {
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+        }
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                success(xhr.responseText);
+            }
+        }
+        xhr.send(data);
+    }
+
+
+    function ajax(option) {
+        var xhr = new XMLHttpRequest();
+        if (option.type == 'get' && option.data) {
+            option.url += '?' + option.data;
+            option.data = null;
+
+        }
+
+        xhr.open(option.type, option.url);
+
+        if (option.type == 'post' && option.data) {
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+        }
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var type = xhr.getResponseHeader('content-Type');
+                if (type.indexOf('json') != -1) {
+                    option.success(JSON.parse(xhr.responseText));
+                } else if (type.indexOf('xml') != -1) {
+                    option.success(xhr.responseXML);
+
+                } else {
+                    option.success(xhr.responseText);
+
+                }
+            }
+        }
+        xhr.send(option.data);
+    }
+</script>

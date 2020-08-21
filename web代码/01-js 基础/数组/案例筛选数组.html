@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //将数组[23，4，7， 10，45，12，5，8，13，99]中大于等于10的元素选出来v放入新的数组v
+        //生命一个新的数组存放数组newArr
+        //遍历原来的旧的数组找出大于等于10的元素
+        //一次追加给新的数组newArr
+        //方法一：
+        var arr = [23, 4, 7, 10, 45, 12, 5, 8, 13, 99];
+        var newArr = [];
+        var j = 0;  //声明一个变量使其=0； 
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] > 10) {
+                //新的数组索引号应该从0 开始，依次递增
+                newArr[j] = arr[i];
+                j++;
+            }
+        }
+        console.log(newArr);
+
+        // document.write(newArr);
+
+        //方法二：
+        var arr = [23, 4, 7, 10, 45, 12, 5, 8, 13, 99];
+        var newArr = [];
+        // newArr.length 是从0开始：
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] > 10) {
+                //新的数组索引号应该从0 开始，依次递增
+
+                newArr[newArr.length] = arr[i];
+            }
+        }
+        console.log(newArr);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

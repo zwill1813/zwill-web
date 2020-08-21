@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>用户注册</h2>
+    <input type="text" placeholder="请输入用户名">
+    <h3>状态</h3>
+    <div class="box"></div>
+</body>
+<script>
+    var inp = document.querySelector('input');
+    var h3 = document.querySelector('h3');
+    var box = document.querySelector('.box');
+    inp.onblur = function () {
+        h3.innerHTML = '验证中';
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', 'data.php?name=' + this.value);
+        //3.设置请求头(get请求可以省略,post不发送数据也可以省略)
+        //3.5注册回调函数
+        xhr.onload = function () {
+            console.log(xhr.responseText);
+            box.innerHTML = xhr.responseText;
+            h3.innerHTML = '验证完毕';
+            h3.style.color = 'blue';
+        }
+        xhr.send(null);
+    }
+</script>
+
+</html>

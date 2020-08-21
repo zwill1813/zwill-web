@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+            background-color: yellowgreen;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script src="./template-web.js"></script>
+    <!-- 定义模板 
+    type 不写 或者是 text/javascript 会被解析为 js
+    如果写成其他的内容 不会被当做js解析
+-->
+    <script type="text/html" id="template">
+        <ul>
+            <li>名字---{{name}}</li>
+            <li>技能---{{skill}}</li>
+            <li>位置---{{weiZhi }}</li>
+        </ul>
+    </script>
+    <script>
+        var data = {
+            name: '史蒂芬.库里',
+            skill: '三分球',
+            weiZhi: '控球后卫'
+        }
+        var result = template('template', data)
+        document.querySelector('div').innerHTML = result;
+    </script>
+</body>
+
+</html>

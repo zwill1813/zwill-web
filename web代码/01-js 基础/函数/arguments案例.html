@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //利用函数求任意个数的最大值
+        function getMax() {
+            var max = arguments[0];
+            for (var i = 1; i < arguments.length; i++) {
+                if (arguments[i] > max) {
+                    max = arguments[i];
+                }
+            }
+            return max;
+
+        }
+        var re = getMax(23, 34, 4, 6, 7, 89, 234, 0);
+        console.log(re);
+
+
+
+        //案例二  利用函数反翻转任意数组 reverse (翻转)
+        function reverse(arr) {//arr是旧数组
+            var newArr = [];
+            for (var i = arr.length - 1; i >= 0; i--) {
+                newArr[newArr.length] = arr[i];
+            }
+            return newArr;
+        }
+        var rel = reverse([23, 3, 56, 78, 67, 45]);
+        console.log(rel);
+        var rel1 = reverse(['red', 'green', 'blue', 'pink']);
+        console.log(rel1);
+
+
+        //案例三  利用函数冒泡排序  sort(排序)
+        function sort(arr) {
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+
+        }
+        var arr1 = sort([45, 3, 43, 23, 6, 75, 235, 1234]);
+        console.log(arr1);
+
+        //案例四
+        //  利用函数判断闰年
+        function isRunYear(year) {
+            var flag = false;
+            //如果是闰年 返回true  否则返回false
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                flag = true;
+            }
+            return flag;
+
+        }
+        console.log(isRunYear(prompt('请您输入年份：')));
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

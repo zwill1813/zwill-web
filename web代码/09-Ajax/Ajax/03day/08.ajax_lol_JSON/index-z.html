@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 1200px;
+            border: 2px solid red;
+            background-color: yellowgreen;
+            border-radius: 20px;
+            box-shadow: 3px 3px 10px blue;
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        td {
+            border: 1px solid #000;
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="button" value="点击获取">
+    <div class="box"></div>
+
+
+    <script>
+        var btn = document.querySelector('input');
+        var box = document.querySelector('.box');
+        btn.onclick = function () {
+            //1.创建异步对象
+            var xhr = new XMLHttpRequest();
+
+            //2.设置请求行
+            xhr.open('get', 'backHero.php');
+            //3.设置请求头(get请求可以省略)
+            //4.注册状态改变事件
+            xhr.onreadystatechange = function () {
+                //4.1判断状态&请求是否成功并使用数据
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // console.log(xhr.responseText);
+                    var heroArr = JSON.parse(xhr.responseText);
+                    console.log(heroArr);
+
+                    // 拼接表格
+                    var html = '';
+                    html = "<table>";
+                    for (var i = 0; i < heroArr.length; i++) {
+                        var currentObj = heroArr[i];
+                        html += '<tr> <td><img src="' + currentObj.champion_icon + '"></td>   <td>' + currentObj
+                            .champion_name + '</td>   <td>' + currentObj.champion_title + '</td><td>' +
+                            currentObj.champion_info + '</td></tr>';
+
+                    }
+                    html += '</table>';
+                    box.innerHTML = html;
+                }
+            }
+            //5.发送请求
+            xhr.send(null);
+        }
+    </script>
+</body>
+
+</html>

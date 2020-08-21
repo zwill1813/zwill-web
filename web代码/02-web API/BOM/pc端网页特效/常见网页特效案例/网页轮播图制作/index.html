@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        .w {
+            width: 1200px;
+            margin: 0px auto;
+        }
+
+        .fous {
+            position: relative;
+            width: 721px;
+            height: 455px;
+            margin-top: 20px;
+            margin-left: 100px;
+            /* border: 1px solid #ee1b1b; */
+            overflow: hidden;
+
+        }
+
+        .arrow-l,
+        .arrow-r {
+            display: none;
+            position: absolute;
+            top: 50%;
+            margin-top: -10px;
+            left: 0px;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: #ffffff;
+            font-size: 18px;
+            border-radius: 0px 15px 15px 0px;
+            background: rgba(0, 0, 255, .3);
+            z-index: 2;
+        }
+
+        .arrow-r {
+
+            left: 690px;
+            border-radius: 15px 0px 0px 15px;
+        }
+
+        ul {
+
+            width: 600%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        ul li {
+            float: left;
+
+        }
+
+        ol {
+            position: absolute;
+            top: 90%;
+            left: 50px;
+            height: 20px;
+            background-color: rgba(#c7c4c4, #c7c4c4, #c7c4c4, .4);
+        }
+
+        ol li {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            float: left;
+            margin-left: 10px;
+            border: 2px solid #CCC;
+            cursor: pointer;
+            background-color: #ffffff;
+        }
+
+        .current {
+            background-color: darkred;
+        }
+    </style>
+    <script src="animate.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div class="w ">
+        <div class="fous">
+            <!-- 左右按钮 -->
+            <a class="arrow-l" href="javascript:;">&lt;</a>
+            <a class="arrow-r" href="javascript:;">&gt;</a>
+            <!-- 图片部分 -->
+            <ul>
+                <li><a href="javascript:;"><img src="./img/focus.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img src="./img/focus1.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img src="./img/focus2.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img src="./img/focus3.jpg" alt=""></a></li>
+
+                <!-- <li><a href="javascript:;"><img src="./img/focus3.jpg" alt=""></a></li> -->
+            </ul>
+            <!-- 圆点部分 -->
+            <ol>
+
+            </ol>
+        </div>
+    </div>
+</body>
+
+</html>

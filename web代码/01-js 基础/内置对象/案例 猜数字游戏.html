@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function getRandom(min, max) {
+        //     return Math.floor(Math.random() * (max - min + 1)) + min;
+
+        // }
+        // var random = getRandom(1, 10);
+        // while (true) {//死循环
+        //     var num = prompt('请您猜一个1--10的数字：');
+        //     if (num > random) {
+        //         alert('srooy，您猜大了！');
+        //     } else if (num < random) {
+        //         alert('srooy，您猜小了！');
+        //     } else {
+        //         alert('恭喜你，猜对了—————— 中大奖了');
+        //         break;//退出整个循环
+        //     }
+        // }
+
+        //案例二
+        // 要求用户猜1-50之间的数  但是只有10次机会
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+
+        }
+        var random = getRandom(1, 50);
+        for (var i = 0; i <= 10; i++) {
+            var num = prompt('猜一猜，您有10次机会猜一个1--50的数字：');
+
+            if (num > random) {
+                alert('srooy,您猜大了');
+            } else if (num < random) {
+                alert('srooy，您猜小了！');
+            } else if (num == random) {
+                alert('恭喜你，猜对了—————— 中大奖了');
+                break;
+            }
+            if (i == 10) {
+                alert('很遗憾！您的次数用完了1')
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

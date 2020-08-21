@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // //1.
+        // var time = parseInt(prompt("请问显示几点了？"));
+        // if (time > 6 && time <= 12) {
+        //     alert("上午好")
+        // } else if (time >= 13 && time <= 18) {
+        //     alert("下午好")
+        // } else if (time >= 19 && time <= 23) {
+        //     alert("晚上好")
+        // } else if (time >= 0 && time <= 5) {
+        //     alert("这是休息时间，不要说话！")
+        // }
+
+        //2奇数偶数
+
+        // var num = prompt('请您输入一个数');
+        // if (num % 2 == 1) {
+        //     alert(+num + '是奇数：')
+        // } else if (num % 2 == 0) {
+        //     alert(+num + '是偶数：')
+        // }
+
+
+        //3.根据用户输入数字（1-7） 返回星期几
+
+        // var data = parseInt(prompt("请输入日期数："));
+        // if (data % 7 == 1) {
+        //     alert("今天星期一")
+        // } else if (data % 7 == 2) {
+        //     alert("今天星期二")
+        // } else if (data % 7 == 3) {
+        //     alert("今天星期三")
+        // } else if (data % 7 == 4) {
+        //     alert("今天星期四")
+        // } else if (data % 7 == 5) {
+        //     alert("今天星期五")
+        // } else if (data % 7 == 6) {
+        //     alert("今天星期六")
+        // } else if (data % 7 == 0) {
+        //     alert("今天星期日")
+        // }
+
+
+        //4 
+        var num = prompt('猜一下班长口袋里的钱数：');
+        if (num >= 2000) {
+            alert('班长请大家吃西餐；太好了')
+        } else if (num <= 2000 && num >= 1500) {
+            alert('班长请大家吃快餐；嗯呐 还不错')
+
+        } else if (num <= 1500 && num >= 1000) {
+            alert('班长请大家喝饮料； 还可以')
+
+        } else if (num <= 1000 && num >= 500) {
+            alert('班长请大家吃棒棒糖； 有点失望')
+
+        } else {
+            alert('下次提醒班长把钱带够')
+        }
+
+        //比较两个数大小
+        var num1 = parseInt(prompt("请输入一个数："));
+        var num2 = parseInt(prompt("请输入一个数："));
+        if (num1 > num2) {
+            alert(num1);
+        } else {
+            alert(num2);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

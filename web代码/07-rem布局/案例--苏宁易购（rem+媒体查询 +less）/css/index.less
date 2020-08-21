@@ -1,0 +1,168 @@
+@import "common.less";
+
+// @import 导入的意思 可以把一个样式文件导入到另外一个样式文件里面
+// link 是把一个 样式文件引入到 html页面里面
+body {
+    min-width: 320px;
+    width: 15rem;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, ;
+    margin: 0 auto;
+    background: #f2f2f2;
+}
+
+// 页面元素rem计算公式： 页面元素的px / html 字体大小 50
+//定义一个
+@font: 50;
+
+.search-content {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+    height: 88rem / @font;
+    background-color: #ffc001;
+    display: flex;
+
+    .classify {
+        width: 44rem / @font;
+        height: 70rem / @font;
+        margin: 11rem / @font 25rem / @font 7rem / @font 24rem / @font;
+        background-color: red;
+        background: url(../images/classify.png) no-repeat;
+        background-size: 44rem / @font 70rem / @font;
+
+    }
+
+    .search {
+        flex: 1;
+
+        input {
+            border: 0;
+            width: 100%;
+            height: 66rem / @font;
+            border-radius: 33rem / @font;
+            margin-top: 8rem / @font;
+            background-color: #fff2cc;
+            outline: none;
+            font-size: 20rem / @font;
+            padding-left: 30rem / @font;
+            color: #757575;
+        }
+    }
+
+    .login {
+        width: 75rem / @font;
+        height: 70rem / @font;
+        position: relative;
+        margin: 10rem / @font;
+        line-height: 70rem / @font;
+        color: #ffffff;
+
+    }
+
+    .login p {
+        font-size: 15rem / @font;
+        position: absolute;
+        top: 18rem / @font;
+        left: 15rem / @font;
+    }
+
+    .login::after {
+        font-family: 'icomoon';
+        content: "\e908";
+        display: block;
+        position: absolute;
+        top: -18rem / @font;
+        left: 15rem / @font;
+        font-size: 30rem / @font;
+
+    }
+}
+
+//banner
+.banner {
+    width: 15rem;
+    height: 368rem / @font;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// ad
+.ad {
+    display: flex;
+
+    img {
+        flex: 1;
+        width: 100%;
+    }
+}
+
+//nav{
+.nav {
+    width: 15rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        flex: 20%;
+        width: 150rem / @font;
+        height: 140rem / @font;
+        text-align: center;
+
+        img {
+            display: block;
+            width: 84rem / @font;
+            height: 84rem / @font;
+            margin: 10rem / @font auto 0;
+        }
+
+        span {
+            font-size: 22rem / @font;
+            color: #333333;
+            display: block;
+        }
+    }
+}
+
+//底部导航
+.nav-bottom {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    right: 0;
+    bottom: 0;
+    width: 15rem;
+    height: 2rem;
+    background-color: #ffffff;
+
+    a {
+        width: 150rem / @font;
+        height: 2rem;
+        float: left;
+        text-align: center;
+
+        img {
+            display: block;
+            width: 48rem / @font;
+            height: 48rem / @font;
+            margin: 10rem / @font auto 0;
+        }
+
+        span {
+            display: block;
+            // width: 32rem / @font;
+            // height: 32rem / @font;
+            font-size: 20rem / @font;
+            color: #333333;
+        }
+
+        .index-item {
+            font-weight: 600;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //数组长度  数组名.length
+        //1.数组的长度是元素的个数， 不要跟索引号混淆
+        //2.arr.length  动态监测数组元素的个数
+        // var arr = ['html', 'javascript', 'web', 'vue', 'dom', 'node', 'jquery']
+        // for (var i = 0; i < arr.length; i++) {
+        //     console.log(arr[i]);
+
+        // }
+
+
+        //案例
+        // 1. 求数组【2，34，56，9，63，21】里面所有元素的和及平均数
+        var sum = 0;
+        var average = 0;
+        var arr = [2, 34, 56, 9, 63, 21];
+        for (var i = 0; i < arr.length; i++) {
+            sum += arr[i];  //这里加的是数组元素 arr[i] 不是计数器i
+
+        }
+        average = sum / arr.length;
+        console.log(sum, average);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

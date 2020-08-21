@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Date ()日期对象  是一个构造函数，必须使用new 用来创建调用日期对象
+        var arr = new Array();//创建一个数组对象
+        var obj = new Object();//创建一个对象实例
+        //1， Date的使用  如果没有参数  返回当前时间
+        var date = new Date();
+        console.log(date);
+        //2，参数常用的写法 
+        // 数字型 2020，07，07
+        //字符串型'2020-07-07 22:38:45'
+        var date1 = new Date(2019, 07, 07);
+        console.log(date1);//返回的是11月
+        var date2 = new Date('2020-07-07 22:40:45');
+        console.log(date2);
+
+
+        //格式化日期   年 月 日  星期
+        var date = new Date();
+        console.log(date.getFullYear());//2020
+        console.log(date.getMonth() + 1);//返回的月份小一个月  要+1才可以
+        console.log(date.getDate());//
+        console.log(date.getDay());//2
+
+        // 案例  写一个2020年 7月7号  星期二
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var date3 = date.getDate();
+        var day = date.getDay();
+        var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        console.log('今天是：' + year + '年' + month + '月' + date3 + '日  ' + arr[day]);
+
+
+        //格式化日期   时分秒
+        var date4 = new Date();
+        console.log(date.getHours());
+        console.log(date.getMinutes());
+        console.log(date.getSeconds());
+        //要求封装一个函数返回当前的时分秒 格式  00： 00：00
+        function getTime() {
+            var time = new Date();
+            var h = time.getHours();
+            h = h < 10 ? '0' + h : h;
+            var m = time.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            var s = time.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            return h + ':' + m + ':' + s;
+        }
+        console.log(getTime());
+        //date 获得总的毫秒数（时间戳）  不是当前毫秒数，而是距离1970，1，1过了多少秒
+        var date6 = new Date();
+        console.log(date6.getTime());
+
+        var date5 = +new Date();//简单常用的方法
+        console.log(date5);
+        // h5新增的方法
+        console.log(Date.now());
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

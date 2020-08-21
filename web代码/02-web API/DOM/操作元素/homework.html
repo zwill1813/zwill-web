@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* <!--案例1  开始 --> */
+    .inp {
+        outline: none;
+        color: #999999;
+    }
+</style>
+
+<body>
+
+    <!--案例1  开始 -->
+    <input class="inp" type="text" value="邮箱/id/手机">
+    <input class="pas" type="password" value="">
+    <label for="">登录</label>
+    <script>
+
+        var text = document.querySelector('input');
+        text.onfocus = function () {
+            if (this.value === '邮箱/id/手机') {
+                this.value = '';
+            }
+            this.style.color = '#333333';
+
+        }
+        text.onblur = function () {
+            if (this.value === '') {
+                tihs.value = '邮箱/id/手机';
+            }
+            this.style.color = '#999999';
+        }
+    </script>
+    <!--案例1  结束 -->
+
+    <!--案例2  开始 -->
+
+
+
+    <!-- <button id="btn">开关灯</button>
+    <script>
+        var btn = document.getElementById('btn');
+        var flag = 0;
+        btn.onclick = function () {
+            if (flag == 0) {
+                //获取body的方法
+                document.body.style.backgroundColor = 'black';
+                flag = 1;
+            } else {
+                document.body.style.backgroundColor = '#fff';
+                flag = 0;
+            }
+        }
+        
+    案例2  结束
+    </script> -->
+</body>
+
+</html>

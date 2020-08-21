@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>请求xml文件</h2>
+    <input type="button" value='ajax获取XML文件'>
+    <h3></h3>
+    <script>
+        var btn = document.querySelector('input');
+        btn.addEventListener('click', function () {
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('post', 'backXML.php');
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+
+
+                    console.log(xhr.responseText);
+                    console.log(xhr.responseXML);
+
+                    var name = xhr.responseXML.querySelector('name').innerHTML;
+                    var age = xhr.responseXML.querySelector('age').innerHTML;
+                    var skill = xhr.responseXML.querySelector('skill').innerHTML;
+                    document.querySelector('h3').innerHTML = name + '--' + age + '--' + skill;
+                }
+            }
+
+            xhr.send(null);
+        })
+    </script>
+
+</body>
+
+</html>

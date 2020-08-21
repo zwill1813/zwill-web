@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //字符串对象
+        //字符串的不可变性 ----之里面的值不可变，虽然看上去改变了但是其实是地址变了
+        // var str = 'html';
+        // console.log(str);
+        // str = 'javascript';
+        // console.log(str);
+        //因为字符串的不可变性所以不要大量的拼接字符串
+
+
+        //字符串的方法
+        //  1，根据字符返回位置
+        // str.indexOf('要查找的字符'，[起始位置])
+        var str = '我们今天学习很多知识，今天也...';
+
+        console.log(str.indexOf('今'));
+        console.log(str.indexOf('今', 3));//从索引号是3的位置开始往后查找
+
+
+        // 案例1，求a字符分别在什么地方出现  出现的次数
+        var str1 = 'adfawecadfaha';
+        var index = str1.indexOf('a');
+        var num = 0;
+        while (index !== -1) {
+            console.log(index);
+            num++;
+            index = str1.indexOf('a', index + 1);
+
+
+        }
+        console.log('a出现的次数是：' + num);
+
+        //   案例二求数组中pink元素分别在什么地方出现  出现的次数
+        var arr = ['red', 'pink', 'blue', 'green', 'pink', 'yellow', 'pink']
+        var index1 = arr.indexOf('pink');
+        var num1 = 0;
+        while (index1 !== -1) {
+            console.log(index1);
+            num1++;
+            index1 = arr.indexOf('pink', index1 + 1);
+
+        }
+        console.log('pink出现的次数是：' + num1);
+
+
+        ///根据位置返回字符（重点）
+        // 1,charAt(index)
+        var str = 'javascript';
+        console.log(str.charAt(0));
+        //2,charCodeAt(index)  返回的是索引号的字符ASCII值  ---是为了判断用户按下了哪个键
+        console.log(str.charCodeAt(0));
+        //3,str[index]  h5新曾的
+        console.log(str[0]);
+
+        //    案例
+        //要求一个字符串里出现次数最多的数和次数
+        var str = 'abcoefoxyozzopp';
+        var o = {};
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i);
+            if (o[chars]) {//o[chars]得到的是属性值
+                o[chars]++;
+            } else {
+                o[chars] = 1;
+            }
+        }
+        console.log(o);
+        //2，遍历对象
+        var max = 0;
+        var ch = '';
+        for (var k in o) {
+            //k 得到的是属性名
+            //o[k]的倒是属性值
+            if (o[k] > max) {
+                max = o[k];
+                ch = k;
+            }
+        }
+        console.log(max);
+        console.log('出现最多的字符是' + ch);
+
+
+
+        //字符串操作方法
+        //1，concat('字符串1','字符串2'...)
+        var str = 'js';
+        console.log(str.concat('+html'));
+        // 2,substr(‘截取的起始位置’，'截取几个字符‘)；
+        var str6 = '我喜欢学习jacascript';
+        console.log(str6.substr(1, 2));//喜欢
+
+        //替换字符
+        //replace ('被替换的字符','替换为的字符')  只会替换第一个字符
+        var str = '我好喜欢学习';
+        console.log(str.replace('好', '不'));
+        var str = 'abcoecfodsaozpodo';
+        while (str.indexOf('o') !== -1) {
+            str = str.replace('o', '*');
+        }
+        console.log(str);
+
+        //字符转换成数组split ('分隔符')
+        var str7 = 'red, redy,blue';
+        console.log(str7.split(','));
+        var str8 = 'red& redy&blue';
+        console.log(str8.split('&'));
+
+
+
+        //   大案例
+        // 将字符串''abaasdffggghhjjkkgfddssss3444343'
+        //1,字符串长度
+        var str = 'abaasdffggghhjjkkgfddssss3444343';
+        console.log(str.length);//32
+        //2取出指定位置的字符  如：0，3，5，9
+        console.log(str.charAt(0));
+        console.log(str.charAt(3));
+        console.log(str.charAt(5));
+        //3查找指定字符是否以字符串存在  如 i，c，b
+        console.log(str.indexOf('i'));//-1  不存在
+        console.log(str.indexOf('c'));//-1
+        console.log(str.indexOf('b'));//1
+        //4替换指定的字符  g替换22，ss替换为b
+        console.log(str.replace('g', '22'));
+
+        console.log(str.substr(1, 5));//截取1-5的字符串
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
